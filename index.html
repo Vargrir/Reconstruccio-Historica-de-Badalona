@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller de Pesca - Grupo Baetulo</title>
+    <!-- Usamos Tailwind CSS para un diseño rápido y corporativo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos adicionales para darle un toque "documental" */
+        body { font-family: 'Georgia', serif; background-color: #f4f1ea; color: #333; }
+        h1, h2, h3 { font-family: 'Helvetica Neue', sans-serif; color: #2c3e50; }
+        .cita-clasica { border-left: 4px solid #8b0000; background-color: #e9e5db; padding: 1rem; margin: 1.5rem 0; font-style: italic; }
+        .autor-cita { display: block; text-align: right; font-weight: bold; font-size: 0.9em; margin-top: 0.5rem; color: #555; }
+        .figura-box { background-color: #fff; border: 1px solid #ddd; padding: 1rem; margin: 2rem 0; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .figura-desc { font-size: 0.85rem; color: #666; margin-top: 0.5rem; }
+    </style>
+</head>
+<body class="antialiased pb-20">
+
+    <!-- Cabecera Institucional -->
+    <header class="bg-slate-800 text-white py-12 text-center shadow-md">
+        <div class="max-w-4xl mx-auto px-4" id="header-content">
+            <h1 class="text-4xl font-bold mb-4" id="doc-title">Cargando documento...</h1>
+            <p class="text-xl text-slate-300" id="doc-entity"></p>
+            <div class="mt-4 inline-block bg-slate-700 rounded-full px-4 py-1 text-sm text-slate-200" id="doc-theme"></div>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal del Texto -->
+    <main class="max-w-4xl mx-auto px-4 md:px-8 py-12 bg-white mt-8 shadow-lg border border-slate-200 rounded-sm" id="main-content">
+        <div id="loading" class="text-center text-slate-500 py-10">Leyendo base de datos XML...</div>
+        <div id="xml-content"></div>
+    </main>
+
+    <footer class="text-center text-sm text-slate-500 mt-12">
+        <p>Documento digitalizado mediante marcado estructural XML.</p>
+        <p>Estrategia Digital - Álvaro Banderas</p>
+    </footer>
+
+    <!-- Script para leer y procesar el XML -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Nombre de tu archivo XML (debe estar en la misma carpeta)
+            const xmlFile = "dossier_pesca_baetulo.xml";
+
+            fetch(xmlFile)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`No se pudo cargar el XML: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+                .then(xml => {
+                    document.getElementById('loading').style.display = 'none';
+                    procesarXML(xml);
+                })
+                .catch(error => {
+                    console.error("Error al cargar el XML:", error);
+                    document.getElementById('loading').innerHTML = `<p class="text-red-600 font-bold">Error: No se pudo cargar el archivo XML.</p><p class="text-sm mt-2">Asegúrate de que <code>dossier_pesca_baetulo.xml</code> está en la misma carpeta que este HTML y estás usando un servidor local.</p>`;
+                });
+        });
+
+        function procesarXML(xml) {
+            // 1. Extraer e insertar Metadatos
+            const titulo = xml.querySelector('titulo').textContent;
+            const entidad = xml.querySelector('entidad').textContent;
+            const tematica = xml.querySelector('tematica').textContent;
+
+            document.getElementById('doc-title').textContent = titulo;
+            document.getElementById('doc-entity').textContent = entidad;
+            document.getElementById('doc-theme').textContent = tematica;
+
+            // 2. Extraer y estructurar el Contenido
+            const secciones = xml.querySelectorAll('seccion');
+            const contentDiv = document.getElementById('xml-content');
+
+            secciones.forEach(seccion => {
+                // Crear contenedor de sección
+                const secDiv = document.createElement('section');
+                secDiv.className = "mb-12 border-b border-slate-100 pb-8 last:border-0";
+                
+                // Título de la sección
+                const tituloSec = seccion.querySelector('titulo_seccion').textContent;
+                const h2 = document.createElement('h2');
+                h2.className = "text-2xl font-bold mb-6 mt-8 text-slate-800 border-l-4 border-slate-800 pl-3";
+                h2.textContent = tituloSec;
+                secDiv.appendChild(h2);
+
+                // Recorrer los elementos dentro de la sección (párrafos, citas, etc.)
+                // Usamos childNodes para mantener el orden
+                Array.from(seccion.children).forEach(nodo => {
+                    const nodeName = nodo.nodeName;
+
+                    if (nodeName === 'parrafo') {
+                        const p = document.createElement('p');
+                        p.className = "mb-4 leading-relaxed text-lg text-slate-700 text-justify";
+                        p.textContent = nodo.textContent;
+                        secDiv.appendChild(p);
+                    } 
+                    else if (nodeName === 'cita_clasica') {
+                        const divCita = document.createElement('div');
+                        divCita.className = "cita-clasica";
+                        
+                        const pTexto = document.createElement('p');
+                        pTexto.textContent = "«" + nodo.querySelector('texto_cita').textContent + "»";
+                        divCita.appendChild(pTexto);
+                        
+                        const spanAutor = document.createElement('span');
+                        spanAutor.className = "autor-cita";
+                        spanAutor.textContent = "— " + nodo.querySelector('autor_fuente').textContent;
+                        divCita.appendChild(spanAutor);
+
+                        secDiv.appendChild(divCita);
+                    }
+                    else if (nodeName === 'figura') {
+                        const num = nodo.getAttribute('numero');
+                        const desc = nodo.querySelector('descripcion_figura').textContent;
+                        
+                        const figDiv = document.createElement('div');
+                        figDiv.className = "figura-box";
+                        
+                        // Placeholder visual de la imagen (aquí iría la etiqueta <img> real en el futuro)
+                        const imgPlaceholder = document.createElement('div');
+                        imgPlaceholder.className = "w-full h-48 bg-slate-200 flex items-center justify-center text-slate-400 mb-3 rounded border border-slate-300";
+                        imgPlaceholder.textContent = "[ Espacio para Imagen de " + (num ? "Figura " + num : "referencia") + " ]";
+                        figDiv.appendChild(imgPlaceholder);
+                        
+                        const pDesc = document.createElement('p');
+                        pDesc.className = "figura-desc";
+                        pDesc.innerHTML = (num ? "<strong>Fig. " + num + ":</strong> " : "") + desc;
+                        figDiv.appendChild(pDesc);
+
+                        secDiv.appendChild(figDiv);
+                    }
+                    else if (nodeName === 'lista') {
+                        const ul = document.createElement('ul');
+                        ul.className = "list-disc pl-8 mb-6 text-lg text-slate-700 space-y-3 marker:text-slate-400";
+                        
+                        nodo.querySelectorAll('item').forEach(item => {
+                            const li = document.createElement('li');
+                            const titItem = item.querySelector('titulo_item');
+                            const texItem = item.querySelector('texto_item');
+                            
+                            if (titItem) {
+                                li.innerHTML = `<strong>${titItem.textContent}</strong> ${texItem.textContent}`;
+                            } else {
+                                li.textContent = texItem.textContent;
+                            }
+                            ul.appendChild(li);
+                        });
+                        secDiv.appendChild(ul);
+                    }
+                });
+
+                contentDiv.appendChild(secDiv);
+            });
+        }
+    </script>
+</body>
+</html>
