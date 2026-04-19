@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dossier_didactico [
+    <!ELEMENT dossier_didactico (metadatos, contenido)>
+    
+    <!-- Metadatos del documento -->
+    <!ELEMENT metadatos (titulo, entidad, tematica, idioma)>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT entidad (#PCDATA)>
+    <!ELEMENT tematica (#PCDATA)>
+    <!ELEMENT idioma (#PCDATA)>
+    
+    <!-- Estructura del contenido -->
+    <!ELEMENT contenido (seccion+)>
+    <!ELEMENT seccion (titulo_seccion, (parrafo | cita_clasica | lista | figura)*)>
+    <!ATTLIST seccion id ID #REQUIRED>
+    
+    <!ELEMENT titulo_seccion (#PCDATA)>
+    <!ELEMENT parrafo (#PCDATA)>
+    
+    <!-- Citas de autores clásicos -->
+    <!ELEMENT cita_clasica (texto_cita, autor_fuente)>
+    <!ELEMENT texto_cita (#PCDATA)>
+    <!ELEMENT autor_fuente (#PCDATA)>
+    
+    <!-- Listas y elementos enumerados -->
+    <!ELEMENT lista (item+)>
+    <!ELEMENT item (titulo_item?, texto_item)>
+    <!ELEMENT titulo_item (#PCDATA)>
+    <!ELEMENT texto_item (#PCDATA)>
+    
+    <!-- Imágenes y figuras -->
+    <!ELEMENT figura (descripcion_figura)>
+    <!ATTLIST figura numero CDATA #IMPLIED>
+    <!ELEMENT descripcion_figura (#PCDATA)>
+]>
+
+<dossier_didactico>
+    <metadatos>
+        <titulo>Taller de Pesca - Reconstrucción Histórica de Badalona</titulo>
+        <entidad>Grupo de Reconstrucción Histórica de Badalona (Baetulo)</entidad>
+        <tematica>Arqueología Experimental y Técnicas de Pesca Romanas</tematica>
+        <idioma>es</idioma>
+    </metadatos>
+
+    <contenido>
+        <!-- SECCIÓN 1: INTRODUCCIÓN -->
+        <seccion id="sec_01_introduccion">
+            <titulo_seccion>Introducción</titulo_seccion>
+            <parrafo>Las enormes posibilidades económicas que ofrecían ciertas zonas del Mediterráneo favorecieron un notable aumento del consumo de pescado, así como su captura y procesamiento, dotando a estas actividades de un carácter casi industrial en términos de sistema de producción. Los abundantes excedentes generados dieron lugar a una organización social centrada en la producción y comercialización del pescado y sus derivados, incrementando la complejidad de las relaciones productivas existentes.</parrafo>
+            <parrafo>En la Península Ibérica se observa un desarrollo económico similar. De una pesca no selectiva, como evidencia el heterogéneo conjunto de especies halladas en yacimientos costeros (Roselló y Morales, 1990), se pasó, ya en época protohistórica, a la explotación más sistemática del negocio que la naturaleza ofrecía a las comunidades costeras próximas al Estrecho. Este impulso económico local tampoco fue ajeno a los pueblos colonizadores, reflejándose en un considerable auge pesquero en época púnica (Bendala, 1987, 152). Esto se constata tanto en la cronología de varios centros de elaboración de pescado en las costas andaluzas y norteafricanas, como en la emisión de numerosas monedas que destacan atunes y otras especies, posiblemente como símbolos de la riqueza urbana (Romero, 1988, 36 y ss.).</parrafo>
+            <parrafo>La interpretación historiográfica de estos símbolos monetales ha estado tradicionalmente vinculada a la prosperidad de las pesquerías (Ponsich, 1988, 87). La captura del atún, desarrollada por diversos centros, constituía una fuente económica de gran importancia, justificando su presencia como emblema numismático en ciudades ligadas a la producción de salazones, como las emisiones gaditanas (Ponce, 1980, 36 y ss.). Sin embargo, estudios recientes proponen interpretaciones adicionales de carácter simbólico y religioso: por ejemplo, la presencia del dios Melkart, divinidad protectora de la navegación, en el anverso de las monedas gaditanas, acompañada en el reverso por atunes, refuerza su vinculación con el mar. Esta asociación perdurará en época romana, cuando Melkart es sustituido por Neptuno, conservándose los atunes en el reverso, como ocurre en las monedas de Salada (García Bellido, 1991, 51 y ss., Fig. 17).</parrafo>
+            <parrafo>Esta hipótesis también podría explicar por qué algunas ciudades salazoneras, como Belo, incluyen elementos agrarios (espigas) en su iconografía monetal, quizá asociados al ritual muerte/resurrección primaveral (García Bellido, 1991, 52), o por qué aparecen monedas con atunes en cecas que no tenían relación directa con la pesca de este pez (Romero, 1988, 36). Comprender esta actividad requiere un análisis integral de la realidad arqueológica, combinando fuentes indirectas iconografía variada y textos literarios con el estudio directo del sustrato arqueológico, donde la ictioarqueología resulta especialmente eficaz. Solo a partir del examen conjunto de estos elementos (Perira, 1983, 154) es posible aproximarse al conocimiento de la pesca y, en particular, del proceso de producción de salazones, identificando las especies marinas y las partes anatómicas más utilizadas (Martínez Maganto, 1992), así como los métodos empleados para su captura.</parrafo>
+            <parrafo>El análisis faunístico es crucial para formular hipótesis sobre la actividad pesquera, dado que los escasos restos de instrumentos, como anzuelos y pesas de red, estudiados individualmente, no permiten conclusiones definitivas. En este sentido, resulta fundamental una lectura crítica de las fuentes clásicas, eliminando interpretaciones mitológicas o acientíficas. Estos textos aportan información valiosa sobre la pesca, su importancia cuantitativa, los métodos y las artes utilizadas. Aunque a menudo los datos están dispersos, existen obras de conjunto de gran valor (Calvo, 1990, 14 y ss.). Entre ellas destacan, por su riqueza documental, la Historia de los animales de Aristóteles (h. 340-330 a.C.), que recoge detalles sobre animales marinos, su anatomía, reproducción y costumbres; la Haliéutica de Opiano, redactada hacia el final del gobierno de Marco Aurelio, con información variada sobre especies marinas y técnicas de pesca; y los diecisiete libros de Eliano sobre zoología, que combinan observación real y conocimiento imaginario (S. III d.C.). Para la época tardía, merece atención la obra Etymologiarum de Isidoro de Sevilla, especialmente su libro XII-6, donde se mencionan las características y hábitos de los animales marinos.</parrafo>
+            <parrafo>A estos autores se suman numerosas referencias en otros escritores de la Antigüedad, tanto en obras literarias como científicas: Aristófanes de Bizancio (S. III a.C., Epítome a la obra de Aristóteles), Clearco de Solos (S. III a.C., Sobre los animales acuáticos), Dorión (S. I a.C., Sobre los peces), Metrodoro de Bizancio (S. I d.C., diversas obras sobre peces), Marcelo de Side (S. II d.C., Latría) y Ovidio (S. I d.C., Haliéuticon), entre otros. A esto habría que añadir fragmentos dispersos en textos generales de Plinio, Estrabón, Mela, Marcial, Ateneo, etc., lo que hace imposible incluir aquí todas las referencias, aunque subraya la enorme riqueza documental disponible sobre pesca y producción de salazones en la Antigüedad.</parrafo>
+        </seccion>
+
+        <!-- SECCIÓN 2: PESCA CON CAÑA Y ANZUELOS -->
+        <seccion id="sec_02_cana_anzuelos">
+            <titulo_seccion>Pesca con caña y anzuelos</titulo_seccion>
+            <parrafo>El uso de anzuelos permite diversas formas de pesca, siendo la más conocida la realizada con caña. Este instrumento consistía en una vara larga (harundo o canna), hecha de material vegetal, flexible y resistente, cuya dureza podía variar según el tipo de captura deseada. En el extremo se colocaba un hilo o línea, fabricado con lino o crines de caballo (Opiano, I, 54), preferiblemente de color neutro para no asustar a las presas (Eliano, XII, 43). La confirmación de la captura se indicaba mediante un flotador o veleta, llamado indicium, que señalaba que el pez había mordido el cebo; para su confección se empleaba generalmente corcho. En el extremo del sedal se colocaba el anzuelo (hamus), al que se enganchaba firmemente el cebo y se lastraba con pesos de plomo (Homero, Ilíada, XXIV, 80).</parrafo>
+            <parrafo>Para peces pequeños, el cebo consistía en insectos (Marcial, V, 18), aunque también se empleaban otros elementos como grasa de cerdo, gusarapa, almejas, intestinos de peces o moluscos (Eliano, XIV, 22; Opiano, III, 173). De forma curiosa, se utilizaban también desechos de fábricas de salazón y pescaderías (Aristóteles, IV, 8; Columela, VIII, 17). Entre las estrategias más ingeniosas destaca el uso de peces muertos a los que se introducía un peso de plomo, llamado "delfin", que simulaba el movimiento de un pez vivo y atraía a los depredadores (Opiano, III, 289). Asimismo, se empleaban cebos artificiales de elaboración compleja (Eliano, XV, 219).</parrafo>
+            <parrafo>Este sistema, adecuado para capturar pequeñas piezas, ofrecía un rendimiento relativamente bajo considerando el número de pescadores y horas de trabajo necesarias. Su productividad era insuficiente para abastecer los grandes procesos de salazón, por lo que su uso era limitado y, en general, más recreativo. La pesca con caña era un pasatiempo apreciado por los hacendados y miembros de la élite (Suetonio, Augusto, 83). Plinio el Joven, por ejemplo, relata que podía pescar desde el piso superior de su villa, sobre un vivero de peces (Plinio J.; Epist., IX, 7, 4). Esta modalidad de pesca inspiró numerosas representaciones "costumbristas", especialmente en pintura mural.</parrafo>
+            
+            <figura numero="1">
+                <descripcion_figura>Pintura mural de Herculano con una escena de pesca: A.- Pesca con caña (harundo). B.- Pesca con red arrojadiza o Esparavel (liculuni).</descripcion_figura>
+            </figura>
+
+            <parrafo>Una variante de bajo impacto económico era la pesca de fondo, en la que el sedal, lastrado con una plomada, se sostenía directamente con la mano sin caña. Permitía capturar peces de mayor tamaño, que a menudo requerían la intervención de una barcaza auxiliar. Una de las representaciones más antiguas de este sistema aparece en el fresco de la tumba "De la caza y la pesca" de Tarquinia (fines S. VI a.C.), donde se observa una pequeña embarcación con cuatro tripulantes, uno de los cuales fondea un hilo desde la proa.</parrafo>
+            
+            <figura numero="2">
+                <descripcion_figura>Fresco de la tumba "De la caza y la pesca" de Tarquinia (fines S. VI a.C.)</descripcion_figura>
+            </figura>
+
+            <parrafo>Otras técnicas, como el palangre, podían generar mayores capturas al combinar numerosos anzuelos en un cabo madre. Este arte, muy usado en el Mediterráneo desde la Antigüedad (Opiano lo denomina polyankistron), aún se emplea hoy en día en versiones de fondo y de superficie (Aguilar, 1981). Es especialmente útil en zonas donde las redes de cerco no funcionan bien, permitiendo capturar especies que no se atrapan con otros artes.</parrafo>
+            <parrafo>En todas estas técnicas, el anzuelo era fundamental, responsable de la correcta sujeción de la presa. Su uso se constata arqueológicamente desde la prehistoria, con ejemplares de hueso, marfil e incluso piedra (Cleyet-Merle, 1990, 120 y ss.). Los textos clásicos más tempranos sitúan su uso en la Grecia Arcaica, como lo refleja Homero en la Odisea:</parrafo>
+            
+            <cita_clasica>
+                <texto_cita>"Pero tan pronto como se agotaron los víveres de la nave, fuerza les fue ingeniárselas para aplacar el hambre, atrapando cuanto les venía a las manos, peces que pescaba con corvos anzuelos o aves"</texto_cita>
+                <autor_fuente>Homero; Odisea, XII, 332</autor_fuente>
+            </cita_clasica>
+
+            <parrafo>Los anzuelos se fabricaban en bronce o hierro, siendo preferido el primero por su resistencia a la oxidación gracias a la mezcla con zinc y aluminio (Lafaye, 1969, 8; Ribeiro, 1971). Se han encontrado evidencias de su uso en la Península Ibérica tanto en industrias de salazón como en asentamientos diversos, incluidos núcleos cástrenos (Vázquez Varela, 1979; Perira, 1983, 154; Carballo, 1989, 57, Fig. 32, n.º 191-195). El procedimiento habitual era la fundición, con martilleado posterior para obtener la forma deseada, aunque a veces se partía de láminas metálicas. Ejemplos documentados incluyen el conjunto de 16 anzuelos de Tróia (Ribeiro, 1971, 397).</parrafo>
+            <parrafo>Los anzuelos variaban en grosor, peso y número de ganchos según el tipo de captura (Ribeiro, 1971, 392 y ss.; Gruvel, 1928, 44). Para grandes presas se usaban anzuelos dobles, cuádruples o incluso hamus catenatus, con cadenas metálicas para extraer peces grandes mediante tracción animal (Plinio, IX, 17). Hoy se observa un uso similar en las pesquerías de atún, no solo para capturar peces, sino también para manejar embarcaciones o transportar capturas (Ponsich, 1988, 78, Figs. 28-1 y 29).</parrafo>
+            <parrafo>El anzuelo se componía de cabeza (donde se unía el sedal), caña o vástago, gancho en "U", punta y lengüeta para evitar que el pez se soltase. Sobre estos elementos se realizaron varias clasificaciones: Déchelette (1910) distinguió seis tipos según la forma de la cabeza; Galliazzo (1979) propuso dos grupos: cabeza plana "a paletta" o cabeza con orificio circular "ad ochiello". Combinando ambos criterios, Gracia (1981/2, 320 y ss.) desarrolló un cuadro jerárquico amplio, aunque de validez limitada.</parrafo>
+            
+            <figura numero="3">
+                <descripcion_figura>Diversos tipos de anzuelos. Varias escalas.</descripcion_figura>
+            </figura>
+
+            <parrafo>El anzuelo sigue siendo un instrumento poco estudiado y con escasa evolución formal, lo que complica su clasificación y datación. Su uso en fábricas de salazón se documenta mediante restos asociados a piletas y otras estancias (Esteve, 1952, 129, Lám. XLVI; Ponsich y Tarradell, 1965, 48). Curiosamente, en algunos casos se hallaron enterramientos de anzuelos dentro de estas instalaciones, como en el conjunto 6 de Tahadart (Ponsich y Tarradell, 1965, 54 y ss.).</parrafo>
+            <parrafo>Respecto a su posible fabricación dentro de las propias industrias salinas, M. Sotomayor (1971, 178) apunta la presencia de escorias metálicas en las catas M4 y J1 de la fábrica de salazón de "El Majuelo" (Almuñécar), que podrían estar relacionadas con la producción de anzuelos y otros utensilios de pesca. En otros casos, los anzuelos se fabricaban mediante la reutilización de clavos, cortando la cabeza y retorciendo el vástago hasta obtener la forma deseada (Ponsich, 1988, 81).</parrafo>
+        </seccion>
+
+        <!-- SECCIÓN 3: NASA -->
+        <seccion id="sec_03_nasa">
+            <titulo_seccion>Nasa</titulo_seccion>
+            <parrafo>La nasa (Nassa) ha cambiado muy poco en su forma a lo largo del tiempo, diferenciándose principalmente por el material de fabricación: hoy se emplean metales o fibras sintéticas, muy distintos de los antiguos modelos de mimbre o esparto. Podía adoptar diferentes tamaños y formas, aunque la más habitual es una especie de jaula alargada, como se aprecia en algunas representaciones monetales (Lafaye, 1969, 2 y Fig. 5260). Su estudio es complicado debido a la escasa conservación de objetos hechos con materiales orgánicos. No obstante, se han recuperado algunos ejemplares completos (Cleyet-Merle, 1990, 175), aunque desafortunadamente no asociados a fábricas de salazón, por lo que su análisis sigue siendo teórico.</parrafo>
+            <parrafo>En general, todas las nasas presentan compartimentos estrechos en los que los peces, atraídos por el cebo, entran y quedan atrapados al no poder retroceder. Normalmente se suspendían sobre el fondo del mar o del río mediante una cuerda, o se amarraban a un soporte en la orilla (Fig. 3), señalándose su ubicación en superficie con un flotador de corcho. Algunos textos antiguos indican que los pescadores esparcían sobre el agua sustancias atractivas para los peces, como harina, miga de pan o plantas aromáticas, para aumentar la eficacia de la trampa (Lafaye, 1969, 490).</parrafo>
+            <parrafo>Opiano describe el procedimiento de manera poética:</parrafo>
+            
+            <cita_clasica>
+                <texto_cita>"El pescador entreteje una nasa de esparto de prieta trama, y dentro pone una torta de algarrobas empapada en vino oloro, y mezcla dentro la lágrima de Mirra (...) Una vez mezclada la sagrada savia con el resto, el pescador ancla su nasa entre las olas y, en seguida, la fragancia del lirio se difunde por el Mar, y llama a los rebaños de variadas clases; y los peces, atraídos por el dulce vaho obedecen a la llamada, y en seguida la nasa está rebosante, trayendo al pescador una recompensa de espléndido botín"</texto_cita>
+                <autor_fuente>Opiano, III, 400 y ss.</autor_fuente>
+            </cita_clasica>
+            
+            <figura numero="4">
+                <descripcion_figura>Nasa fabricada con elementos vegetales localizada en un yacimiento mesolítico danés.</descripcion_figura>
+            </figura>
+
+            <parrafo>Diversas referencias, como Aristóteles (VIII, 20), indican que la nasa se empleaba generalmente para especies de tamaño pequeño o mediano (30-50 cm), en hábitats fluviales o lacustres, distintas de las que se destinaban a la producción de salazones. Su ventaja principal era que no requería la presencia constante del pescador, permitiendo su uso como actividad complementaria de pesca, quizá vinculada a periodos en los que no se calaban almadrabas o como fuente de ingresos adicionales para particulares, mediante venta o intercambio de los escasos excedentes obtenidos.</parrafo>
+        </seccion>
+
+        <!-- SECCIÓN 4: ÚTILES PUNZANTES -->
+        <seccion id="sec_04_utiles_punzantes">
+            <titulo_seccion>Útiles punzantes</titulo_seccion>
+            <parrafo>Este tipo de pesca se basaba en instrumentos, generalmente arrojadizos, con un extremo agudo. Podían ser simples, como los arpones (harpago), o presentar varias puntas (3 o 4), como los tridentes (tridens, físcina) (Feurgére, 1992, Fig. 17). La cabeza metálica, fabricada casi siempre en hierro y en ocasiones en bronce (Feurgére, 1992, 156), se engastaba en un largo astil de madera, preferentemente de olivo por su resistencia.</parrafo>
+            <parrafo>Estos sistemas eran especialmente efectivos en la pesca nocturna: las embarcaciones faenaban con lámparas o antorchas encendidas, que atraían a los peces hacia la luz, facilitando la captura por los arponeros expertos (Opiano, IV, 640 y ss.). Hoy en día, la pesca con luz artificial sigue practicándose, generalmente combinada con redes de cerco, método conocido como traíña (Calvo, 1990, 27).</parrafo>
+            <parrafo>Arpones y tridentes se empleaban tanto para grandes animales marinos como para peces de talla media o pequeña que frecuentaban la costa. Su uso podía variar según tradiciones locales, y su eficacia se basaba en aprovechar el comportamiento gregario de los peces. Opiano describe, por ejemplo, la pesca de crías de atún por los Tracios en el Mar Negro, utilizando troncos lastrados con plomo y hierro para abatir a los peces amontonados en el fondo (Opiano, IV, 532 y ss.).</parrafo>
+            <parrafo>Al igual que la pesca con caña, este método requería un número considerable de arponeros y tiempo de trabajo, lo que limitaba su capacidad para abastecer las demandas de las fábricas de salazón. Su función principal era la captura complementaria de especies menores, probablemente dentro de una economía doméstica o local.</parrafo>
+            <parrafo>En las pesquerías de atún, los instrumentos punzantes no constituían un método de pesca distinto, sino una herramienta para la captura y el izado de los peces en las almadrabas, mediante instrumentos como el bichero (Romero, 1988, 11). Esto concuerda con el hallazgo de Tahadart, donde se encontró un anzuelo transformado en arpón, probablemente para izar atunes (Ponsich y Tarradell, 1965, 48). La presencia de útiles punzantes vinculados a instalaciones de salazón también se documenta en Sta. Pola (Sánchez, Blasco y Guardiola, 1989, 428).</parrafo>
+        </seccion>
+
+        <!-- SECCIÓN 5: REDES -->
+        <seccion id="sec_05_redes">
+            <titulo_seccion>Redes</titulo_seccion>
+            <parrafo>Durante la Época Clásica, el uso de redes era generalizado en todo el Mediterráneo. Su conocimiento nos ha llegado tanto a través de representaciones figuradas, pinturas y mosaicos (Ponsich, 1988, 33), como por el instrumental empleado en su confección y uso.</parrafo>
+            <parrafo>Los pescadores griegos conocían numerosas variantes de redes, que utilizaban según las características del lugar o el número de personas disponibles (Sánchez, Blasco y Guardiola, 1989, 427). En general, todas estas variantes, descritas por Opiano, se mantendrán también en época romana, ya que la pesca mediterránea presentaba pocas diferencias significativas de unas regiones a otras.</parrafo>
+            
+            <lista>
+                <item>
+                    <titulo_item>Esparavel (laculum, funda):</titulo_item>
+                    <texto_item>pequeña red con plomos en forma de embudo, lanzada directamente sobre el agua desde lugares elevados cerca del mar (Fig. 1B).</texto_item>
+                </item>
+                <item>
+                    <titulo_item>Jábega (sagena, verriculum o traguld):</titulo_item>
+                    <texto_item>red de arrastre rectangular que se coloca verticalmente en el mar; su parte central, en forma de gran bolsa, retiene numerosos peces (Manilio, V, 678).</texto_item>
+                </item>
+                <item>
+                    <titulo_item>Red de mano (hypoché, según Opiano):</titulo_item>
+                    <texto_item>documentada en mosaicos, su uso recuerda al de un "cazamarisposas", capturando peces pequeños cerca de la orilla, así como esponjas, ostras o erizos del fondo marino.</texto_item>
+                </item>
+            </lista>
+
+            <parrafo>Dentro de este conjunto general existían muchas variantes, que probablemente corresponden a redes modernas como el trasmallo o las de boliche. Su uso no varía sustancialmente; la elección dependía de las necesidades de captura. Por ello, establecer una clasificación precisa resulta complejo, ya que existen variantes locales cuyo nombre se ha transmitido solo de forma referencial, sin descripción detallada. Es probable que estas variantes fueran similares a las descritas, cambiando únicamente la forma de la red o su colocación y recuperación, constituyendo un continuo entre esparavel y jábega (Portier, 1969, 852). Opiano señalaba: "innumerables son las variadas clases de redes de astutos senos". La evidencia de mosaicos y otros documentos confirma la pesca con redes como un sistema habitual, capaz de generar importantes capturas (Ponsich, 1988, Fig. 9).</parrafo>
+            <parrafo>Otros indicios sobre el uso de redes provienen del instrumental asociado a su confección y reparación (Ponsich, 1966, 107). Entre los más frecuentes en instalaciones de salazón destacan:</parrafo>
+            
+            <lista>
+                <item>
+                    <titulo_item>Lanzaderas:</titulo_item>
+                    <texto_item>varillas delgadas con horquillas en cada extremo, utilizadas para el trenzado de redes. La operación consistía en pasar la lanzadera alternativamente a través de la trama, de izquierda a derecha y viceversa (Gracia, 1981/2, 322 y ss.). Instrumentos casi idénticos se han usado hasta épocas recientes, documentados en el trabajo de Sáñez Reguart, donde se les denomina "agujas" (Sáñez Reguart, 1791, Tomo V, Láms. XXVI y XVII, pp. 181 y 183).</texto_item>
+                </item>
+                <item>
+                    <titulo_item>Agujas:</titulo_item>
+                    <texto_item>usadas para la reparación de redes, especialmente en la operación de cosido. Consisten en un cuerpo rectangular con cabeza que suele tener dos orificios por los que se pasa el sedal (Gracia, 1981/2, 325 y ss.; Carballo, 1989, 58). Estos instrumentos se han encontrado asociados a importantes centros pesqueros, algunos directamente vinculados a fábricas de salazón (Sánchez, Blasco y Guardiola, 1989, 428).</texto_item>
+                </item>
+            </lista>
+            
+            <figura numero="5">
+                <descripcion_figura>Lanzaderas utilizadas para el cosido o unión de redes. A: Diversos ejemplares de radii de época romana. B: Ilustración contemporánea.</descripcion_figura>
+            </figura>
+
+            <figura numero="6">
+                <descripcion_figura>Ejemplares de agujas para red.</descripcion_figura>
+            </figura>
+
+            <parrafo>Otro elemento frecuentemente relacionado con el uso de redes son las pesas de red o "pesas de piedra con entalles para pesca" (De Pinho y Lanhas, 1971). Se trata de cantos rodados de 7-10 cm, de contorno ovalado o circular, con cortes diametralmente opuestos para fijar cuerdas o hilos. Su función principal era sostener la red en posición vertical mediante su peso, como se ha documentado recientemente (De Pinho y Lanhas, 1971, 588 y n. 3 de p. 582).</parrafo>
+            <parrafo>El uso de estas pesas se confirma en la etnografía actual en distintas zonas de España: en Galicia, llamadas "poutadas", se emplean tanto en pesca fluvial como marítima (Naveiro, 1991, 101 y n. 91; Carballo, 1989, 153, Lám. XLIX, nº 600 y 606; Cardozo, 1980, 45 y 63). También se usan para lastrar artes de anzuelo o palangres verticales en Galicia (Crespo, 1983, 103) y en Euskadi, donde reciben el nombre de "péndula" (Merino, 1990, 415 y figs. 1 y 2). En la Cataluña francesa se utilizan para la pesca al croe o con capuceres (Boissier, 1984, 197 y ss.).</parrafo>
+            
+            <figura numero="7">
+                <descripcion_figura>Cantos trabajados empleados como pesas de red (A), y uso de los mismos para el sostenimiento vertical de tramas de red (B).</descripcion_figura>
+            </figura>
+
+            <parrafo>Aunque la piedra era el material más común, también se han documentado pesas de cerámica o de plomo (Ponsich, 1988, 85, Figs. 32-3 y 4; Feugére, 1992, 147, Figs. 8 a 10). Su aparición en fábricas de salazón indica su vinculación con la actividad pesquera, aunque no siempre queda claro si se empleaban específicamente para redes o para lastrado de palangres; en algunos casos, la forma ha llevado a confundirlas con pesas de telar (Del Amo, 1976, Fig. 34), aunque su función pesquera resulta más lógica en el contexto.</parrafo>
+        </seccion>
+
+        <!-- SECCIÓN 6: SISTEMAS ALTERNATIVOS -->
+        <seccion id="sec_06_sistemas_alternativos">
+            <titulo_seccion>Sistemas de pesca alternativos</titulo_seccion>
+            <parrafo>Además de los métodos de pesca ya descritos, existían numerosas formas directas e indirectas de capturar peces, que variaban según usos, costumbres y regiones. Muchas de estas técnicas son conocidas únicamente a través de referencias literarias y su empleo parece haber sido más anecdótico que sistemático.</parrafo>
+            <parrafo>En algunos lugares se utilizaban sustancias venenosas o estupefacientes extraídas de determinadas plantas. Estas se aplicaban sobre la superficie del agua, causando la muerte o la incapacidad temporal de los peces, que ascendían a la superficie y podían ser capturados fácilmente. Una planta especialmente conocida en la Antigüedad por sus propiedades estupefacientes es el cyclamen, junto con otras variantes mencionadas por diversas fuentes (Teofrasto, IX, 10; Filóstrato, Imag., 13; Aristóteles, VIII, 20). El procedimiento se describe así:</parrafo>
+            
+            <cita_clasica>
+                <texto_cita>"Hay otro método de pesca practicado por los pescadores que usan veneno, los cuales elaboran un pernicioso veneno para los peces, y acarrea rápida muerte a las razas nadadoras. Primero, con fuertes disparos de proyectiles, y golpes de palos y azotes de los remos, conducen a las infelices hileras de criaturas del mar a un lugar curvo, a alguna bahía rota con numerosos escondrijos; allí los peces se deslizan bajo las cóncavas rocas y los pescadores colocan por todas partes bien entramadas redes de lino (...) Entonces un hombre toma abundante arcilla blanca junto con la raíz que los médicos llaman cyclamen, mezclándolas con sus manos amasa dos tortas y salta sobre las redes dentro del mar (...) En seguida el nocivo y desagradable olor llega hasta los peces en sus moradas y sus ojos se nublan, les pesan la cabeza y los miembros y no pueden permanecer en sus escondrijos, sino que salen de las rocas aterrados (...) Pesados como borrachos, embriagados por el mortífero olor, dan vueltas por todas partes sin encontrar un sitio libre de la plaga y se precipitan violentamente dentro de las redes, ansiosos de escapar..."</texto_cita>
+                <autor_fuente>Opiano, IV, 647-684</autor_fuente>
+            </cita_clasica>
+
+            <parrafo>Aunque esta técnica se sigue empleando en ciertas regiones de África de forma comunal, no hay evidencia de su uso en actividades vinculadas a instalaciones de salazón.</parrafo>
+            <parrafo>Otro sistema interesante, que no requería aventurarse al mar, es el de los corrales de pesca, documentados en las costas peninsulares (Moreno y Abad, 1971, 213 y ss.). Se trataba de construcciones artificiales, circulares o semicirculares, realizadas con sillares de piedra o excavadas en la roca, aprovechando el juego de las mareas. Durante la marea alta, el agua cubría los corrales permitiendo la entrada de peces y crustáceos; al bajar la marea, los animales quedaban atrapados, al no poder escapar, y el agua filtrada dejaba un lecho fangoso o seco, facilitando la captura sin esfuerzo.</parrafo>
+            <parrafo>Este sistema permitía obtener capturas complementarias, adecuadas para el suministro local, y se utilizó hasta el siglo XIX en numerosos puntos del Mediterráneo, como Chipiona, Sanlúcar o Barbate, zonas estrechamente vinculadas a antiguas industrias de salazón (Sáñez Reguart, 1791, Tomo II, p. 316; Moreno y Abad, 1971, Figs. 1-3). Con el tiempo, los corrales evolucionaron hacia estructuras más sofisticadas, incorporando muros de separación o elementos de madera, como rejas.</parrafo>
+            <parrafo>Finalmente, se documenta una curiosa práctica basada en la atracción de peces mediante música, aunque de dudosa efectividad. Se creía que ciertos animales respondían a los sonidos de instrumentos como flauta, tamboril o pífano, incluso en el caso de los cangrejos (Lafaye, 1969, 491; Eliano, VI, 31).</parrafo>
+        </seccion>
+
+        <!-- SECCIÓN 7: REDES EN EL IMPERIO ROMANO -->
+        <seccion id="sec_07_redes_imperio_romano">
+            <titulo_seccion>Redes de pesca en el Imperio romano: técnicas, confección y uso en la economía marítima</titulo_seccion>
+            <parrafo>Durante la época romana, el uso de redes era un método habitual de pesca en todo el Mediterráneo, tanto en el mar abierto como en zonas costeras y fluviales. Las fuentes literarias, representaciones figuradas como mosaicos y la arqueología han permitido reconstruir, al menos parcialmente, cómo se confeccionaban y utilizaban estas redes. La evidencia indica que estaban hechas principalmente de fibras vegetales, como lino, cáñamo o esparto, materiales que permitían trenzar mallas resistentes pero flexibles. Debido a la naturaleza perecedera de estos materiales, muy pocas redes se conservan de forma directa, lo que obliga a recurrir a restos indirectos como pesos de piedra o plomo, agujas y lanzaderas para tejer o reparar las redes, así como a hallazgos en villas romanas donde se producían estos utensilios.</parrafo>
+            <parrafo>Las redes romanas presentaban gran diversidad tipológica, adaptada a distintos entornos y objetivos de pesca. Existían desde redes pequeñas de mano, destinadas a capturas modestas cerca de la orilla o en aguas fluviales, hasta redes más grandes que podían calarse desde embarcaciones, usadas en contextos industriales de pesca y salazón para abastecer fábricas de salazón o cetariae. Para asegurar el correcto funcionamiento de las redes, se empleaban lastres de plomo, piedra o incluso cerámica, que permitían que la red se mantuviera vertical en el agua, y boyas, normalmente de corcho, que señalizaban su presencia en la superficie.</parrafo>
+            <parrafo>La confección y reparación de redes requería herramientas especializadas. Las lanzaderas eran varillas delgadas con horquillas en los extremos que servían para trenzar el hilo, mientras que las agujas permitían coser o reparar la red. Estos instrumentos se han encontrado en contextos arqueológicos asociados a villas y fábricas de redes, lo que sugiere que la producción de redes podía ser una actividad organizada y complementaria a otras industrias pesqueras. Las representaciones pictóricas y mosaicos confirman que la pesca con redes era habitual en la vida romana y permitía capturas significativas, reflejando la importancia de este sistema dentro de la economía de subsistencia local y de la industria del pescado.</parrafo>
+            <parrafo>En conjunto, aunque la evidencia directa es limitada, los hallazgos arqueológicos, las fuentes literarias y las representaciones visuales permiten afirmar que las redes eran un componente esencial de la pesca en el Imperio romano. Su confección con fibras naturales, complementada con lastres y boyas, y su adaptación a distintos tamaños y métodos de pesca, demuestra una gran diversidad técnica y funcional. Las redes permitían tanto la pesca artesanal y doméstica como la captura masiva necesaria para abastecer las industrias de salazón, consolidándose así como una de las herramientas más importantes de la economía pesquera romana.</parrafo>
+        </seccion>
+
+        <!-- SECCIÓN 8: EMBARCACIONES ROMANAS -->
+        <seccion id="sec_08_embarcaciones">
+            <titulo_seccion>Embarcaciones romanas en época imperial</titulo_seccion>
+            <parrafo>Durante la época imperial, los buques mercantes romanos alcanzaron su apogeo. Excavaciones submarinas y el estudio de restos arqueológicos han puesto de manifiesto la extraordinaria diversidad de embarcaciones: desde pequeñas y medianas naves de cabotaje, hasta grandes buques de carga, pasando por barcos de pesca, de servicio o con usos específicos. Destacan los pecios conservados en el Museo de Barcos Romanos de Fiumicino y en Aquilea, donde se conserva el pecio de Monfalcone, que permiten apreciar esta variedad.</parrafo>
+            <parrafo>Uno de los ejemplos más ilustrativos sobre los tipos de embarcaciones se encuentra en el mosaico de Althiburus (Túnez), donde se representan distintas naves con los nombres que se les atribuían en la época. Entre las barcas de pesca y recreo se identifican: Cydarum, Horeia, Placida, Musculus, Ratis, Stlatta y Vegeiia. Entre los grandes mercantes destacan: Corbita, Ponto y Actuaria. Este mosaico evidencia que los romanos clasificaban sus embarcaciones según tamaño y función, diferenciando claramente entre pesca, recreo y transporte mercantil.</parrafo>
+        </seccion>
+
+        <!-- SECCIÓN 9: BARCOS DE PESCA Y TRANSPORTE -->
+        <seccion id="sec_09_transporte_maritimo">
+            <titulo_seccion>Barcos de pesca y transporte de productos marítimos</titulo_seccion>
+            <parrafo>Un ejemplo concreto de barco de pesca es el pecio Fiumicino 5, interpretado como una nave vivaria según Boetto (2006). Esta embarcación contaba con un recipiente central de madera destinado a mantener el pescado fresco en agua de mar, lo que indica un uso comercial organizado más allá de la pesca de subsistencia. Su tipología podría equipararse con la barca celox, representada en mosaicos antiguos, lo que demuestra la coexistencia de evidencia arqueológica y iconográfica para identificar estas embarcaciones.</parrafo>
+            <parrafo>El transporte marítimo permitía trasladar productos voluminosos y pesados a largas distancias con costes mucho menores que el transporte terrestre. Por ejemplo, el transporte por mar podía ser aproximadamente 60 veces más barato que por tierra. Esto era especialmente relevante para materias primas como grano o materiales de construcción, que se comercializaban casi exclusivamente a través de rutas marítimas.</parrafo>
+        </seccion>
+
+        <!-- SECCIÓN 10: NAVEGACIÓN -->
+        <seccion id="sec_10_navegacion">
+            <titulo_seccion>Navegación y técnicas</titulo_seccion>
+            <parrafo>La navegación en el Mediterráneo romano combinaba cabotaje y travesías abiertas. Con vientos favorables, se estimaba que una jornada diurna de navegación cubría alrededor de 700 estadios a una velocidad media de 4-5 nudos, alcanzando hasta 6 nudos en casos de travesías rápidas. Plinio documenta, por ejemplo, viajes de dos días desde Ostia a África (cabo Bon) y seis días hasta Alejandría, mientras que Estrabón menciona trayectos de hasta tres meses en casos más prolongados.</parrafo>
+            <parrafo>Los romanos conocían el comportamiento climático estacional del Mediterráneo, dividiendo el año en mare apertum, la época favorable para la navegación (aproximadamente de marzo a octubre), y mare clausum, época de riesgo que se evitaba salvo necesidad. El inicio de la temporada de navegación se asociaba con la ceremonia del Navigium Isidis, destinada a propiciar los tráficos marítimos. Las sondas o escandallos, generalmente de plomo, se utilizaban para conocer la profundidad y tipo de fondo, elemento esencial para la navegación costera y el cabotaje.</parrafo>
+            <parrafo>Además, se conocía la circulación general de las aguas mediterráneas, que sigue un sentido contrario a las agujas del reloj, causada por el déficit de aporte fluvial y la evaporación, lo que influía en la planificación de rutas y tiempos de viaje.</parrafo>
+        </seccion>
+
+        <!-- SECCIÓN 11: CUERPOS CELESTES -->
+        <seccion id="sec_11_astronomia">
+            <titulo_seccion>Uso de cuerpos celestes en navegación romana</titulo_seccion>
+            <lista>
+                <item>
+                    <titulo_item>1. Estrellas y constelaciones</titulo_item>
+                    <texto_item>Los marineros sabían identificar constelaciones y estrellas fijas que les permitían orientarse de noche. Por ejemplo, en latitudes donde la Estrella Polar era visible, servía para mantener la dirección norte-sur. Se usaban constelaciones conocidas por ciclos estacionales para calcular la época del año, lo que ayudaba a decidir cuándo era seguro navegar y cuándo no.</texto_item>
+                </item>
+                <item>
+                    <titulo_item>2. Sol y Luna</titulo_item>
+                    <texto_item>La posición del Sol durante el día y de la Luna por la noche proporcionaba referencias para la orientación y estimación de la latitud aproximada. Se observaban fases lunares para planificar mareas y días favorables para salir o regresar a puerto.</texto_item>
+                </item>
+                <item>
+                    <titulo_item>3. Astrología práctica</titulo_item>
+                    <texto_item>Los romanos consideraban ciertos períodos propicios o adversos para navegar según la posición de los astros y el ciclo anual. Por ejemplo, el mosaico de Althiburus y textos de la época mencionan la importancia de navegar entre primavera y otoño, y evitar el invierno. Se combinaba con rituales, como el Navigium Isidis, que marcaba el inicio de la temporada de navegación segura. Aunque tenía componente religioso, refleja la idea de que los astros y las estaciones eran indicadores de riesgo o seguridad.</texto_item>
+                </item>
+                <item>
+                    <titulo_item>4. Observación del Mediterráneo</titulo_item>
+                    <texto_item>Más que "astrología" moderna, lo que practicaban era astronomía aplicada: observar estrellas y constelaciones, combinarlo con conocimiento meteorológico, corrientes y mareas para planificar rutas de cabotaje y travesías largas.</texto_item>
+                </item>
+            </lista>
+        </seccion>
+    </contenido>
+</dossier_didactico>
